@@ -1,0 +1,152 @@
+/* ── Header (page-specific sizing) ── */
+header {
+  padding: 2.5rem 1rem 2rem;
+}
+
+.header-icon {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+
+/* ── Main content ── */
+main {
+  max-width: 800px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #1a365d;
+}
+
+/* ── Accordion ── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+details {
+  background: #fff;
+  border: 1px solid #bee3f8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+details[open] {
+  box-shadow: 0 4px 14px rgba(43, 108, 176, 0.18);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  user-select: none;
+  background: #ebf8ff;
+  transition: background 0.2s;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+details[open] summary {
+  background: #bee3f8;
+}
+
+summary:hover {
+  background: #bee3f8;
+}
+
+.feature-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.chevron {
+  margin-left: auto;
+  font-size: 0.85rem;
+  transition: transform 0.25s;
+}
+
+details[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.detail-body {
+  padding: 1rem 1.25rem 1.25rem 3.4rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4a5568;
+}
+
+.detail-body ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.detail-body ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* ── CTA ── */
+.cta-section {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.cta-section p {
+  font-size: 0.95rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #2b6cb0, #1a365d);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 12px rgba(43,108,176,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(43,108,176,0.45);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.82rem;
+  color: #a0aec0;
+  margin-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+}

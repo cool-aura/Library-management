@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Details – Library Management System</title>
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/user-details.css" />
+</head>
+<body>
+
+  <!-- ════ Header ════ -->
+  <header>
+    <span class="header-icon" role="img" aria-label="Library">📚</span>
+    <h1>Library Management System</h1>
+    <p>Register your account to access all library features.</p>
+  </header>
+
+  <!-- ════ Main ════ -->
+  <main>
+    <a href="Index.html" class="back-link">← Back to Home</a>
+
+    <div class="form-card">
+      <h2>👤 User Registration Form</h2>
+
+      <form id="userForm" novalidate>
+
+        <!-- ── Personal Information ── -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" name="firstName" placeholder="e.g. Jane"
+                     required minlength="2" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" name="lastName" placeholder="e.g. Smith"
+                     required minlength="2" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:1rem;">
+            <div class="form-group">
+              <label for="dob">Date of Birth <span class="required">*</span></label>
+              <input type="date" id="dob" name="dob" required autocomplete="bday" />
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group" role="radiogroup" aria-label="Gender">
+                <label><input type="radio" name="gender" value="male" /> Male</label>
+                <label><input type="radio" name="gender" value="female" /> Female</label>
+                <label><input type="radio" name="gender" value="other" /> Other</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <hr class="divider" />
+
+        <!-- ── Contact Information ── -->
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <div class="row single">
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="jane.smith@example.com"
+                     required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:1rem;">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 555 123 4567"
+                     required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="altPhone">Alternate Phone</label>
+              <input type="tel" id="altPhone" name="altPhone" placeholder="Optional"
+                     autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="row single" style="margin-top:1rem;">
+            <div class="form-group">
+              <label for="address">Address <span class="required">*</span></label>
+              <textarea id="address" name="address" placeholder="Street, City, State, ZIP"
+                        required autocomplete="street-address"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <hr class="divider" />
+
+        <!-- ── Membership Details ── -->
+        <fieldset>
+          <legend>Membership Details</legend>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="membershipType">Membership Type <span class="required">*</span></label>
+              <select id="membershipType" name="membershipType" required>
+                <option value="" disabled selected>Select a plan…</option>
+                <option value="basic">Basic – Free (2 books/month)</option>
+                <option value="standard">Standard – $5/month (5 books)</option>
+                <option value="premium">Premium – $10/month (Unlimited)</option>
+                <option value="student">Student – $3/month (3 books)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="startDate">Membership Start Date <span class="required">*</span></label>
+              <input type="date" id="startDate" name="startDate" required />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:1rem;">
+            <div class="form-group">
+              <label for="idProof">ID Proof Type <span class="required">*</span></label>
+              <select id="idProof" name="idProof" required>
+                <option value="" disabled selected>Select ID type…</option>
+                <option value="passport">Passport</option>
+                <option value="drivers_license">Driver's License</option>
+                <option value="national_id">National ID</option>
+                <option value="student_id">Student ID</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="idNumber">ID Number <span class="required">*</span></label>
+              <input type="text" id="idNumber" name="idNumber" placeholder="e.g. A1234567" required />
+              <span class="helper">As it appears on your ID document.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <hr class="divider" />
+
+        <!-- ── Preferences ── -->
+        <fieldset>
+          <legend>Reading Preferences</legend>
+
+          <div class="row single">
+            <div class="form-group">
+              <label for="favoriteGenres">Favorite Genres</label>
+              <select id="favoriteGenres" name="favoriteGenres" multiple
+                      style="min-height:110px; border-radius:8px;">
+                <option value="fiction">Fiction</option>
+                <option value="nonfiction">Non-Fiction</option>
+                <option value="science">Science &amp; Technology</option>
+                <option value="history">History</option>
+                <option value="biography">Biography</option>
+                <option value="selfhelp">Self-Help</option>
+                <option value="mystery">Mystery &amp; Thriller</option>
+                <option value="fantasy">Fantasy &amp; Sci-Fi</option>
+                <option value="children">Children's Books</option>
+              </select>
+              <span class="helper">Hold Ctrl / Cmd to select multiple genres.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <hr class="divider" />
+
+        <!-- ── Consent ── -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="notifications" name="notifications" />
+          <label for="notifications">
+            I would like to receive email notifications about due dates, new arrivals, and events.
+          </label>
+        </div>
+
+        <div class="checkbox-group" style="margin-top:0.7rem;">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">
+            I agree to the Library's <a href="#" style="color:#2b6cb0;">Terms &amp; Conditions</a>
+            and <a href="#" style="color:#2b6cb0;">Privacy Policy</a>. <span class="required">*</span>
+          </label>
+        </div>
+
+        <!-- ── Actions ── -->
+        <div class="form-actions">
+          <button type="reset" class="btn btn-outline">Clear Form</button>
+          <button type="submit" class="btn btn-primary">Register →</button>
+        </div>
+      </form>
+
+      <!-- Success message -->
+      <div id="success-banner" role="alert" aria-live="polite">
+        ✅ Registration successful! Welcome to the Library Management System.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Set default start date to today
+    const startDateInput = document.getElementById('startDate');
+    const today = new Date().toISOString().split('T')[0];
+    startDateInput.value = today;
+    startDateInput.min = today;
+
+    // Prevent future date of birth
+    const dobInput = document.getElementById('dob');
+    dobInput.max = today;
+
+    // Form submission
+    document.getElementById('userForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const terms = document.getElementById('terms');
+      if (!terms.checked) {
+        terms.focus();
+        alert('Please accept the Terms & Conditions to proceed.');
+        return;
+      }
+
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+
+      // Show success banner and hide form
+      this.style.display = 'none';
+      const banner = document.getElementById('success-banner');
+      banner.style.display = 'block';
+      banner.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
